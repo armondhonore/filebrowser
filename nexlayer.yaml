@@ -1,0 +1,15 @@
+application:
+  name: filebrowser
+  pods:
+  - name: app
+    image: filebrowser/filebrowser:v2
+    path: /
+    servicePorts:
+    - 80
+    volumes:
+    - name: filebrowser-data
+      mountPath: /srv
+      size: 10Gi
+    - name: filebrowser-db
+      mountPath: /database
+      size: 1Gi
