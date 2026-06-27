@@ -2,9 +2,16 @@ application:
   name: filebrowser
   pods:
     - name: app
-      image: "registry.nexlayer.io/user_01kece1xyh817dwff7wnarhkxd/filebrowser:9f05a1b-fix4"
-      path: /srv
+      image: "filebrowser/filebrowser:v2"
+      path: /
       servicePorts:
         - 80
       vars:
         PORT: "80"
+      volumes:
+        - name: filebrowser-data
+          mountPath: /srv
+          size: 10Gi
+        - name: filebrowser-db
+          mountPath: /database
+          size: 1Gi
