@@ -8,10 +8,3 @@ application:
         - 80
       vars:
         PORT: "80"
-      volumes:
-        - name: filebrowser-data
-          mountPath: /srv
-          size: 10Gi
-        - name: filebrowser-db
-          mountPath: /database
-          size: 1Gi
